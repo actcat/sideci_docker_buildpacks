@@ -2,7 +2,9 @@ FROM ubuntu:14.04
 
 MAINTAINER Vexus2 <hikaru.tooyama@gmail.com>
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get dist-upgrade -y
+
+RUN apt-get update -y && apt-get install -y \
     autoconf \
     build-essential \
     imagemagick \
@@ -26,16 +28,12 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
-    bzr \
-    cvs \
+RUN apt-get update -y && apt-get install -y
     git \
-    mercurial \
-    subversion \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -y && apt-get install -y \
     curl \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
