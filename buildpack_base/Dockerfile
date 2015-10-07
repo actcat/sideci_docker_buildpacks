@@ -25,6 +25,7 @@ RUN apt-get update -y && apt-get install -y \
     libxml2-dev \
     libxslt-dev \
     libyaml-dev \
+    wget \
     zlib1g-dev \
   && rm -rf /var/lib/apt/lists/*
 
