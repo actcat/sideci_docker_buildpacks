@@ -1,4 +1,4 @@
-FROM quay.io/actcat/buildpack_base
+FROM quay.io/actcat/buildpack_base:latest
 
 MAINTAINER Vexus2 <hikaru.tooyama@gmail.com>
 
