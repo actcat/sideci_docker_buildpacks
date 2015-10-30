@@ -39,5 +39,3 @@ RUN apt-get update -y && apt-get install -y \
 
 RUN apt-get update -y && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
 
-RUN locale-gen en_US && \
-    export LANG=en_US
