@@ -28,10 +28,11 @@ RUN apt-get update -y && apt-get install -y \
     wget \
     zlib1g-dev \
     python-software-properties \
+    software-properties-common \
   && rm -rf /var/lib/apt/lists/*
 
 # Install git from launchpad maintain repo
-RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install -y \
+RUN add-apt-repository ppa:git-core/ppa -y && apt-get update -y && apt-get install -y \
     git \
   && rm -rf /var/lib/apt/lists/*
 
