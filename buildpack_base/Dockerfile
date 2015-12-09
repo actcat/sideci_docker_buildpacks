@@ -49,6 +49,5 @@ RUN locale-gen $(grep '\.UTF-8' /usr/share/i18n/SUPPORTED | awk '{ print $1 }')
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
-# @see https://bugs.launchpad.net/ubuntu-jp-improvement/+bug/1508796
-RUN apt-get update -y && apt-get install -y language-pack-ja=1:14.04+20140410
+RUN apt-get update -y && apt-get install -y language-pack-ja
 RUN update-locale en_US.UTF-8
