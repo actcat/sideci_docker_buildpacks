@@ -27,9 +27,11 @@ RUN apt-get update -y && apt-get install -y \
     libyaml-dev \
     wget \
     zlib1g-dev \
+    python-software-properties \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update -y && apt-get install -y \
+# Install git from launchpad maintain repo
+RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install -y \
     git \
   && rm -rf /var/lib/apt/lists/*
 
@@ -49,4 +51,3 @@ ENV LANG en_US.UTF-8
 # @see https://bugs.launchpad.net/ubuntu-jp-improvement/+bug/1508796
 RUN apt-get update -y && apt-get install -y language-pack-ja=1:14.04+20140410
 RUN update-locale en_US.UTF-8
-
