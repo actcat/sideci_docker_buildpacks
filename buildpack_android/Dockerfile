@@ -27,13 +27,13 @@ WORKDIR /root/work
 # Install gradle
 RUN wget https://services.gradle.org/distributions/gradle-2.7-bin.zip
 RUN unzip gradle-2.7-bin.zip
-ENV PATH /root/work/gradle-2.7/bin:$PATH
+ENV PATH $PATH:/root/work/gradle-2.7/bin
 
 # Install Maven
 RUN wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip
 RUN unzip apache-maven-3.3.3-bin.zip
 ENV M2_HOME /root/work/apache-maven-3.3.3/
-ENV PATH /root/work/apache-maven-3.3.3/bin:$PATH
+ENV PATH $PATH:/root/work/apache-maven-3.3.3/bin
 
 # Support Gradle
 ENV TERM dumb
