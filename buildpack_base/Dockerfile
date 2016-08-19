@@ -62,3 +62,6 @@ ENV PATH $PATH:/root/work/hub-linux-amd64-2.2.3/bin
 RUN echo 'alias git=hub' >> ~/.bashrc
 RUN mkdir /root/.config
 ADD hub /root/.config/hub
+
+# Set Git config
+RUN git config --global diff.compactionHeuristic true
