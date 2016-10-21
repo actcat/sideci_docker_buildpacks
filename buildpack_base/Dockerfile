@@ -29,6 +29,7 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev \
     python-software-properties \
     software-properties-common \
+    patchutils \
   && rm -rf /var/lib/apt/lists/*
 
 # Install git from launchpad maintain repo
