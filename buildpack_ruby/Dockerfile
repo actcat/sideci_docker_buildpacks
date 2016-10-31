@@ -2,24 +2,7 @@ FROM quay.io/actcat/buildpack_base:latest
 
 MAINTAINER Vexus2 <hikaru.tooyama@gmail.com>
 
-ENV RUBY_MAJOR 2.3
-ENV RUBY_VERSION 2.3.0
-
-# some of ruby's build scripts are written in ruby
-# we purge this later to make sure our final image uses what we just built
-RUN apt-get update -y \
-  && apt-get install -y bison ruby \
-  && rm -rf /var/lib/apt/lists/* \
-  && mkdir -p /usr/src/ruby \
-  && curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2" \
-    | tar -xjC /usr/src/ruby --strip-components=1 \
-  && cd /usr/src/ruby \
-  && autoconf \
-  && ./configure --disable-install-doc \
-  && make -j"$(nproc)" \
-  && apt-get purge -y --auto-remove bison ruby \
-  && make install \
-  && rm -r /usr/src/ruby
+# Ruby is installed in buildpack_base
 
 # skip installing gem documentation
 RUN echo 'gem: --no3rdoc --no-ri' >> "$HOME/.gemrc"
@@ -33,4 +16,3 @@ RUN gem install bundler \
 
 # don't create ".bundle" in all our apps
 ENV BUNDLE_APP_CONFIG $GEM_HOME
-
