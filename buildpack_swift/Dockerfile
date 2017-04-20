@@ -1,7 +1,6 @@
 FROM norionomura/sourcekit:302
 MAINTAINER Masataka Kuwabara <masataka.kuwabara@actcat.co.jp>
 
-
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list && \
     apt-get update && \
