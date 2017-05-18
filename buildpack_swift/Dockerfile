@@ -1,4 +1,4 @@
-FROM norionomura/sourcekit:302
+FROM norionomura/sourcekit:311
 MAINTAINER Masataka Kuwabara <masataka.kuwabara@actcat.co.jp>
 
 ENV DEBIAN_FRONTEND=noninteractive
