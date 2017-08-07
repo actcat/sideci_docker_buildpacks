@@ -1,4 +1,4 @@
-FROM norionomura/sourcekit:302
+FROM norionomura/sourcekit:311
 MAINTAINER Masataka Kuwabara <masataka.kuwabara@actcat.co.jp>
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -50,3 +50,10 @@ RUN apt-get update -y \
   && apt-get purge -y --auto-remove bison ruby \
   && make install \
   && rm -r /usr/src/ruby
+
+RUN apt-get update -y && \
+    apt-get install -y language-pack-en && \
+    update-locale en_US.UTF-8
+
+ENV LC_ALL="en_US.UTF-8" \
+    LANG="en_US.UTF-8"
