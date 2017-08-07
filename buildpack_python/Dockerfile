@@ -9,9 +9,9 @@ ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
 # Install python 2 and 3
-RUN pyenv install 2.7.10 \
-  && pyenv install 3.5.0 \
+RUN pyenv install 2.7.12 \
+  && pyenv install 3.5.2 \
   && pyenv rehash        \
-  && pyenv global 3.5.0
+  && pyenv global 3.5.2
 
 RUN apt-get update -y
